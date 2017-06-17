@@ -85,6 +85,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1j-Co-FSg">
+                                                    <rect key="frame" x="77" y="8" width="15" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="3RF-pY-DaA"/>
+                                                        <constraint firstAttribute="width" constant="15" id="FEq-Ty-YAd"/>
+                                                    </constraints>
+                                                    <state key="normal" image="delete"/>
+                                                    <connections>
+                                                        <action selector="deleteCellBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="glv-T0-BIJ"/>
+                                                    </connections>
+                                                </button>
                                                 <imageView userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="GSA-85-fPd">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
                                                     <color key="backgroundColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -104,13 +115,16 @@
                                         <constraints>
                                             <constraint firstItem="GSA-85-fPd" firstAttribute="leading" secondItem="OLG-2F-4vd" secondAttribute="leading" id="BNn-Q1-O61"/>
                                             <constraint firstItem="aVP-xN-c8q" firstAttribute="top" secondItem="GSA-85-fPd" secondAttribute="bottom" id="GT5-nn-B1a"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="a1j-Co-FSg" secondAttribute="trailing" id="Hpe-KZ-zTd"/>
                                             <constraint firstAttribute="trailing" secondItem="GSA-85-fPd" secondAttribute="trailing" id="Mtx-fQ-CoD"/>
                                             <constraint firstItem="GSA-85-fPd" firstAttribute="top" secondItem="OLG-2F-4vd" secondAttribute="top" id="XGQ-1V-5mn"/>
                                             <constraint firstItem="aVP-xN-c8q" firstAttribute="leading" secondItem="OLG-2F-4vd" secondAttribute="leading" id="YUn-b0-ihJ"/>
                                             <constraint firstAttribute="bottom" secondItem="aVP-xN-c8q" secondAttribute="bottom" id="dLf-kM-aID"/>
+                                            <constraint firstItem="a1j-Co-FSg" firstAttribute="top" secondItem="OLG-2F-4vd" secondAttribute="topMargin" id="jVo-qu-7gw"/>
                                             <constraint firstAttribute="trailing" secondItem="aVP-xN-c8q" secondAttribute="trailing" id="oxk-us-uSC"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="deleteBtn" destination="a1j-Co-FSg" id="h7K-eM-5cd"/>
                                             <outlet property="nameLabel" destination="aVP-xN-c8q" id="F0Y-pV-3se"/>
                                             <outlet property="thumbImg" destination="GSA-85-fPd" id="R4A-rP-bUI"/>
                                         </connections>
@@ -144,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.39130434782609" y="123.09782608695653"/>
+            <point key="canvasLocation" x="116.25" y="122.53521126760563"/>
         </scene>
         <!--Pokemon DetailsVC-->
         <scene sceneID="UkD-kf-wLs">
@@ -452,13 +466,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mw0-xw-pgZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="958.125" y="120.4225352112676"/>
+            <point key="canvasLocation" x="816" y="123"/>
         </scene>
     </scenes>
     <resources>
         <image name="1" width="120" height="120"/>
         <image name="back" width="100" height="67"/>
         <image name="bg" width="1920" height="1200"/>
+        <image name="delete" width="128" height="128"/>
         <image name="music.png" width="100" height="100"/>
     </resources>
 </document>

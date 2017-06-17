@@ -76,10 +76,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             if inSearchingMode{
                poke =  filteredPokemon[indexPath.row]
                 cell.configureCell(pokemon: poke)
+                cell.deleteBtn.tag = indexPath.row
             }else{
                 poke =  pokemon[indexPath.row]
                 cell.configureCell(pokemon: poke)
+                cell.deleteBtn.tag = indexPath.row
             }
+            
+            
+//            cell.deleteBtn.target(forAction: Selector(("delete")), withSender: UIButton.self)
+            
             return cell
             
         }else{
@@ -152,6 +158,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             sender.alpha = 1.0
         }
     }
+    
+    @IBAction func deleteCellBtn(_ sender: UIButton) {
+        
+        pokemon.remove(at: sender.tag)
+        
+        collectionView.reloadData()
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toPokemonDetailsVC" {

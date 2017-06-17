@@ -14,6 +14,8 @@ class PokeCell: UICollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     
+    @IBOutlet weak var deleteBtn: UIButton!
+    
     var pokemon: Pokemon!
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,7 +30,6 @@ class PokeCell: UICollectionViewCell {
         
         thumbImg.image = UIImage(named: "\(self.pokemon.pokedexID)")
         nameLabel.text = self.pokemon.name.capitalized
-        
     }
 }
 
